@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/sections/hero.css" />
-  <link rel="stylesheet" href="css/sections/gallery.css" />
+  <link rel="stylesheet" href="css/sections/showreel.css" />
   <link rel="stylesheet" href="css/sections/menu.css" />
   <link rel="stylesheet" href="css/sections/why-us.css" />
   <link rel="stylesheet" href="css/sections/reviews.css" />
@@ -38,7 +38,7 @@
       </a>
       <ul class="navbar__links" data-nav-links>
         <li><a href="#hero">Inicio</a></li>
-        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#showreel">Nosotros</a></li>
         <li><a href="#menu">Menú</a></li>
         <li><a href="#por-que">Por qué nosotros</a></li>
         <li><a href="#reseñas">Reseñas</a></li>
@@ -91,19 +91,28 @@
       <div class="hero__scroll-cue"><span></span>Desliza</div>
     </section>
 
-    <!-- ===== 2. Galería ===== -->
-    <section class="gallery" id="galeria">
-      <div class="container gallery__inner">
+    <!-- ===== 2. Showreel ===== -->
+    <section class="showreel" id="showreel">
+      <div class="container showreel__inner">
         <p class="section-label">Conócenos</p>
         <h2 class="section-title" style="margin-inline:auto">
           Un vistazo a Victoria Cafetería
         </h2>
         <p class="section-subtitle" style="margin-inline:auto;">
-          Así se ve (y sabe) la experiencia Victoria: cocina, café y buena
-          compañía.
+          Cocina, café y buena compañía: así se vive la experiencia Victoria.
         </p>
 
-        <div class="gallery-grid" data-gallery-grid></div>
+        <div class="showreel__player" data-showreel-player>
+          <video
+            src="assets/video/showreel.mp4"
+            poster="assets/img/hero/showreel-poster.jpg"
+            playsinline
+            controls
+          ></video>
+          <button class="showreel__play" data-showreel-play aria-label="Reproducir video">
+            <span class="play-icon">▶</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -206,7 +215,7 @@
   <!-- Módulos -->
   <script src="js/modules/nav.js"></script>
   <script src="js/modules/reveal.js"></script>
-  <script src="js/modules/gallery-render.js"></script>
+  <script src="js/modules/showreel.js"></script>
   <script src="js/modules/menu-render.js"></script>
   <script src="js/modules/why-us-render.js"></script>
   <script src="js/modules/reviews-render.js"></script>

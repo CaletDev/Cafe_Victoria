@@ -51,54 +51,15 @@
 }
 
 .dish-card {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.dish-card__media {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--color-brown-light);
-}
-.dish-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-med);
-}
-.dish-card:hover .dish-card__media img {
-  transform: scale(1.06);
-}
-
-/* Reemplazo visual cuando la imagen real del platillo aún no existe */
-.dish-card__placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 16px;
-  background: linear-gradient(135deg, var(--color-brown-light), #f3e8d8);
-  color: var(--color-text-muted);
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-}
-
-.dish-card__badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-}
-
-.dish-card__body {
-  padding: 20px 22px 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  flex: 1;
+  padding: 22px 24px;
+  border-top: 3px solid var(--color-secondary);
+}
+
+.dish-card__badge {
+  align-self: flex-start;
 }
 
 .dish-card__top {

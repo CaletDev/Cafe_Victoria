@@ -2,9 +2,8 @@
  * menu-render.js
  * Renderiza las categorías y los platillos del menú a partir de
  * MENU_CATEGORIES y MENU_ITEMS (js/data/menu-data.js), y maneja el
- * filtro por categoría. Si una imagen de platillo no existe todavía,
- * se sustituye por una tarjeta con el nombre del platillo para que el
- * sitio nunca muestre un ícono de imagen rota.
+ * filtro por categoría. Las tarjetas son solo texto (nombre, precio,
+ * descripción): no todos los platillos necesitan foto.
  */
 
 const MenuRenderModule = (() => {
@@ -48,7 +47,11 @@ const MenuRenderModule = (() => {
         : MENU_ITEMS.filter((item) => item.category === categoryId);
 
     container.innerHTML = items.map(dishCardTemplate).join("");
-    attachImageFallbacks(container);
+    // Las tarjetas son elementos nuevos en el DOM: hay que volver a
+    // registrarlas en el observer de scroll-reveal, o se quedarían
+    // invisibles para siempre (el observer inicial solo vio las que
+    // existían al cargar la página).
+    RevealModule.observe(container);
   }
 
   function dishCardTemplate(item) {
@@ -59,38 +62,14 @@ const MenuRenderModule = (() => {
 
     return `
       <article class="dish-card card reveal">
-        <div class="dish-card__media">
-          ${badge}
-          <img
-            src="${item.image}"
-            alt="${escapeHtml(item.name)}"
-            loading="lazy"
-            data-dish-name="${escapeHtml(item.name)}"
-          />
+        <div class="dish-card__top">
+          <h3 class="dish-card__name">${escapeHtml(item.name)}</h3>
+          <span class="dish-card__price">${priceLabel}</span>
         </div>
-        <div class="dish-card__body">
-          <div class="dish-card__top">
-            <h3 class="dish-card__name">${escapeHtml(item.name)}</h3>
-            <span class="dish-card__price">${priceLabel}</span>
-          </div>
-          <p class="dish-card__desc">${escapeHtml(item.description)}</p>
-        </div>
+        ${badge}
+        <p class="dish-card__desc">${escapeHtml(item.description)}</p>
       </article>
     `;
-  }
-
-  // Si la imagen de un platillo no existe todavía (assets pendientes de
-  // subir), la reemplazamos por una tarjeta con el nombre del platillo
-  // en vez de dejar el ícono de imagen rota del navegador.
-  function attachImageFallbacks(container) {
-    container.querySelectorAll("img[data-dish-name]").forEach((img) => {
-      img.addEventListener("error", () => {
-        const placeholder = document.createElement("div");
-        placeholder.className = "dish-card__placeholder";
-        placeholder.textContent = img.dataset.dishName;
-        img.replaceWith(placeholder);
-      });
-    });
   }
 
   function escapeHtml(text) {

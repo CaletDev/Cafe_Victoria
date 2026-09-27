@@ -16,37 +16,34 @@ css/
   base.css            reset + tipografía base
   layout.css           contenedor y grillas
   components.css       navbar, botones, badges, cards
-  sections/*.css        un archivo por sección (hero, galería, menu, etc.)
+  sections/*.css        un archivo por sección (hero, showreel, menu, etc.)
 js/
   config.js             datos del negocio + link de reseñas de Google
   data/
     menu-data.js          categorías y platillos del menú (precios reales, ₡)
-    content-data.js        galería, "por qué elegirnos" y testimonios
+    content-data.js        "por qué elegirnos" y testimonios
   modules/                un módulo por comportamiento (nav, filtros, etc.)
   main.js                inicializa todos los módulos
 assets/
   img/hero/               foto de fondo del hero
-  img/menu/                fotos de los platillos (algunas ya reales)
-  img/logo/                 logo de Victoria Cafetería
+  img/logo/                logo de Victoria Cafetería
+  video/                   video del showreel (pendiente)
 ```
 
-El menú (`js/data/menu-data.js`) ya tiene el contenido real tomado del
-menú físico del local: ~100 platillos con precios en colones. Unos 27
-platillos ya tienen foto real (recortada de las fotos del menú físico);
-el resto muestra automáticamente una tarjeta con el nombre del platillo
-mientras no se suba su foto — el sitio nunca se ve roto.
-
-No se recibió video del restaurante, así que la sección 2 ("Showreel")
-se resolvió como una **galería de fotos reales** (`css/sections/gallery.css`,
-`js/modules/gallery-render.js`, datos en `GALLERY_ITEMS` dentro de
-`content-data.js`). Si más adelante hay un video, esa sección se puede
-volver a cambiar por un reproductor.
+El menú (`js/data/menu-data.js`) tiene el contenido real tomado del menú
+físico del local: 149 platillos con precios en colones. Las tarjetas son
+solo texto (nombre, descripción, precio) — a propósito no llevan foto por
+platillo.
 
 ## Pendientes para dejarlo 100% real
 
-1. **Más fotos de platillos**: agrega imágenes en `assets/img/menu/`
-   con el nombre de archivo que ya referencia cada platillo en
-   `menu-data.js` (por ejemplo `assets/img/menu/cortado.jpg`).
+1. **Video del showreel**: la sección 2 ya está lista para reproducir un
+   video (`assets/video/showreel.mp4` + poster en
+   `assets/img/hero/showreel-poster.jpg`). Mientras no exista el archivo,
+   el reproductor se ve como un panel vacío con degradado — no rompe la
+   página. Intenté sacar fotos/video mejores de la página de Facebook que
+   compartiste, pero ese dominio está bloqueado desde este entorno; súbelos
+   directo aquí en el chat o al repo cuando los tengas.
 
 2. **Link directo de reseñas de Google**: para que el botón abra
    directo el formulario de estrellas (no solo la ficha de Maps),

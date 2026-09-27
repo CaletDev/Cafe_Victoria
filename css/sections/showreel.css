@@ -1,0 +1,71 @@
+/**
+ * showreel.css - Sección 2: video del restaurante.
+ */
+
+.showreel {
+  background: var(--color-brown);
+  color: #fff;
+}
+
+.showreel__inner {
+  text-align: center;
+}
+
+.showreel .section-title,
+.showreel .section-subtitle {
+  color: #fff;
+}
+.showreel .section-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.showreel__player {
+  position: relative;
+  max-width: 960px;
+  margin: 40px auto 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--color-brown), var(--color-primary-dark));
+}
+
+.showreel__player video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showreel__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  color: #fff;
+  transition: background var(--transition-fast);
+}
+.showreel__play:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+.showreel__play .play-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  transition: transform var(--transition-fast);
+}
+.showreel__play:hover .play-icon {
+  transform: scale(1.08);
+}
+.showreel__player.is-playing .showreel__play {
+  opacity: 0;
+  pointer-events: none;
+}
