@@ -24,6 +24,7 @@ const MENU_CATEGORIES = [
   { id: "saludable", label: "Ensaladas y bowls" },
   { id: "almuerzo", label: "Almuerzos" },
   { id: "postres", label: "Postres" },
+  { id: "ninos", label: "Menú de niños" },
 ];
 
 const MENU_ITEMS = [
@@ -93,7 +94,6 @@ const MENU_ITEMS = [
   { id: "rap-07", category: "rapidas", name: "Orden de quesitos fritos", description: "", price: 2850, tags: [] },
   { id: "rap-08", category: "rapidas", name: "Orden de papas", description: "", price: 2850, tags: [] },
   { id: "rap-09", category: "rapidas", name: "Orden de patacones", description: "", price: 2400, tags: [] },
-  { id: "rap-10", category: "rapidas", name: "Menú de niños", description: "Fajitas de pollo o pescado empanizado con papas, hamburguesa de pollo con papas, casado pequeño o pasta a la mantequilla.", price: 4100, tags: [] },
 
   // ---------- Sándwiches ----------
   { id: "san-01", category: "sandwiches", name: "Sandwich premium", description: "Pan ciabatta, filet de lomo o pollo a la plancha, hongos, queso mozzarella, cebolla caramelizada y papas en gajo.", price: 7200, tags: [] },
@@ -193,4 +193,10 @@ const MENU_ITEMS = [
   { id: "pos-15", category: "postres", name: "Rollo de canela", description: "Con glaseado de queso crema.", price: 2550, tags: [] },
   { id: "pos-16", category: "postres", name: "Red Velvet", description: "", price: 3100, tags: [] },
   { id: "pos-17", category: "postres", name: "Croquem bouche", description: "Solo fines de semana.", price: 2200, tags: [] },
+
+  // ---------- Menú de niños ----------
+  { id: "nin-01", category: "ninos", name: "Fajitas de pollo o pescado empanizado", description: "Con papas.", price: 4100, tags: [] },
+  { id: "nin-02", category: "ninos", name: "Hamburguesa de pollo", description: "Con papas.", price: 4100, tags: [] },
+  { id: "nin-03", category: "ninos", name: "Casado pequeño", description: "", price: 4100, tags: [] },
+  { id: "nin-04", category: "ninos", name: "Pasta a la mantequilla", description: "", price: 4100, tags: [] },
 ];
