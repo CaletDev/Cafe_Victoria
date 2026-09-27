@@ -75,6 +75,16 @@
   gap: 16px;
   margin-top: 32px;
 }
+/* El botón outline usa texto oscuro por defecto (pensado para fondos
+   claros); sobre la foto oscura del hero necesita su propio contraste. */
+.hero__actions .btn--outline {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+.hero__actions .btn--outline:hover {
+  background: #fff;
+  color: var(--color-brown);
+}
 
 .hero__stats {
   display: flex;
