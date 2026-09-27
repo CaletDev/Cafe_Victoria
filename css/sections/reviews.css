@@ -1,0 +1,70 @@
+/**
+ * reviews.css - Sección 5: testimonios + CTA a Google Reviews.
+ */
+
+.reviews {
+  background: var(--color-bg);
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+@media (max-width: 900px) {
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial {
+  padding: 28px 26px;
+}
+
+.testimonial__stars {
+  margin-bottom: 12px;
+}
+
+.testimonial__text {
+  font-size: 0.98rem;
+  color: var(--color-text);
+  margin-bottom: 18px;
+}
+
+.testimonial__name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.reviews__cta {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.reviews__cta-stars {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.reviews__cta h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.reviews__cta p {
+  color: var(--color-text-muted);
+  max-width: 460px;
+  margin: 0 auto 28px;
+}
+
+.btn--google svg {
+  width: 20px;
+  height: 20px;
+}
