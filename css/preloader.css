@@ -1,0 +1,115 @@
+/**
+ * preloader.css
+ * Pantalla de carga inicial (ver js/modules/preloader.js). Se muestra
+ * como el primer elemento del <body>, cubriendo toda la pantalla, y se
+ * desvanece cuando la página termina de cargar (mínimo 3 segundos).
+ */
+
+html.is-loading,
+html.is-loading body {
+  overflow: hidden;
+  height: 100%;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(160deg, var(--color-brown) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader__mark {
+  position: relative;
+  width: 116px;
+  height: 116px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+.preloader__ring::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--color-secondary);
+  animation: preloader-spin 1.1s linear infinite;
+}
+
+.preloader__logo {
+  position: relative;
+  z-index: 1;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: preloader-pulse 1.8s ease-in-out infinite;
+}
+
+.preloader__text {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.preloader__bar {
+  width: 160px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+.preloader__bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--color-secondary);
+  animation: preloader-fill 3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes preloader-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes preloader-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+@keyframes preloader-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader__ring::before,
+  .preloader__logo {
+    animation: none;
+  }
+  .preloader__bar span {
+    animation: none;
+    width: 100%;
+  }
+  .preloader {
+    transition: none;
+  }
+}

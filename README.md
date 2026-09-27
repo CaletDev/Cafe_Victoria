@@ -1,6 +1,8 @@
 # Victoria Cafetería — Landing del Menú
 
-Sitio de una sola página (HTML + CSS + JS puro, sin frameworks ni build step).
+Sitio de una sola página (HTML + CSS + JS, sin build step). Usa
+[GSAP](https://gsap.com) + ScrollTrigger para las animaciones (auto-hospedado
+en `assets/vendor/gsap/`, sin depender de un CDN externo).
 
 ## Cómo verlo
 
@@ -16,6 +18,7 @@ css/
   base.css            reset + tipografía base
   layout.css           contenedor y grillas
   components.css       navbar, botones, badges, cards
+  preloader.css         pantalla de carga inicial
   sections/*.css        un archivo por sección (hero, showreel, menu, etc.)
 js/
   config.js             datos del negocio + link de reseñas de Google
@@ -28,12 +31,24 @@ assets/
   img/hero/               foto de fondo del hero
   img/logo/                logo de Victoria Cafetería
   video/                   video del showreel (pendiente)
+  vendor/gsap/             GSAP + ScrollTrigger auto-hospedados
 ```
 
 El menú (`js/data/menu-data.js`) tiene el contenido real tomado del menú
-físico del local: 149 platillos con precios en colones. Las tarjetas son
+físico del local: 149 platillos con precios en colones, en 10 categorías
+(sin una pestaña "Todos": se eligió no incluirla porque abarrotaba mucho
+la vista — la primera categoría se muestra por defecto). Las tarjetas son
 solo texto (nombre, descripción, precio) — a propósito no llevan foto por
 platillo.
+
+**Detalles de la experiencia:**
+- **Pantalla de carga** (`css/preloader.css`, `js/modules/preloader.js`):
+  se muestra un mínimo de 3 segundos con el logo, un spinner y una barra
+  de progreso, antes de revelar la página.
+- **Menú animado** (`js/modules/menu-render.js`): el filtro tiene un
+  indicador que se desliza hasta la categoría activa, las tarjetas entran
+  y salen en cascada con GSAP al cambiar de categoría, y cada tarjeta se
+  inclina sutilmente (tilt 3D) siguiendo el cursor al pasar el mouse.
 
 ## Pendientes para dejarlo 100% real
 

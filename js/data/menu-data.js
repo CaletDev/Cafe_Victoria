@@ -14,7 +14,6 @@
  */
 
 const MENU_CATEGORIES = [
-  { id: "todos", label: "Todos" },
   { id: "cafe-caliente", label: "Café caliente" },
   { id: "cafe-frio", label: "Café frío" },
   { id: "bebidas", label: "Bebidas" },

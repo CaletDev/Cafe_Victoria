@@ -11,7 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.querySelector("[data-current-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
   const modules = [
+    ["PreloaderModule", typeof PreloaderModule !== "undefined" && PreloaderModule],
     ["NavModule", typeof NavModule !== "undefined" && NavModule],
     ["ShowreelModule", typeof ShowreelModule !== "undefined" && ShowreelModule],
     ["MenuRenderModule", typeof MenuRenderModule !== "undefined" && MenuRenderModule],
