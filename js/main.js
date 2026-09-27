@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (document.querySelector("[data-current-year]").textContent = new Date().getFullYear());
 
   NavModule.init();
-  ShowreelModule.init();
+  GalleryRenderModule.init();
   MenuRenderModule.init();
   WhyUsRenderModule.init();
   ReviewsRenderModule.init();

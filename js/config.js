@@ -7,8 +7,8 @@
 
 const SITE_CONFIG = {
   business: {
-    name: "Café Victoria",
-    tagline: "Sabor casero, hecho con cariño todos los días",
+    name: "Victoria Cafetería",
+    tagline: "La casa del café",
     phone: "+50000000000",
     whatsapp: "+50000000000",
     address: "Dirección del restaurante, Ciudad, País",

@@ -52,7 +52,7 @@ const MenuRenderModule = (() => {
   }
 
   function dishCardTemplate(item) {
-    const priceLabel = item.price > 0 ? `$${item.price.toFixed(2)}` : "Consultar";
+    const priceLabel = item.price > 0 ? `₡${item.price.toLocaleString("es-CR")}` : "Consultar";
     const badge = item.tags && item.tags.length
       ? `<span class="badge dish-card__badge">${escapeHtml(item.tags[0])}</span>`
       : "";
