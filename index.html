@@ -32,10 +32,51 @@
 
   <!-- ===== Pantalla de carga ===== -->
   <div class="preloader" data-preloader role="status" aria-live="polite">
-    <div class="preloader__mark">
-      <span class="preloader__ring"></span>
-      <img class="preloader__logo" src="assets/img/logo/logo.jpg" alt="" />
-    </div>
+    <svg class="preloader__scene" viewBox="0 0 220 220" aria-hidden="true">
+      <!-- vapor -->
+      <g class="preloader__steam" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-linecap="round">
+        <path d="M95,92 C88,78 101,70 96,56 C91,42 103,36 98,24" />
+        <path d="M110,92 C103,78 116,70 111,56 C106,42 118,36 113,24" />
+        <path d="M125,92 C118,78 131,70 126,56 C121,42 133,36 128,24" />
+      </g>
+
+      <!-- taza y plato -->
+      <g fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M72,96 L148,96 L140,152 C140,152 128,168 110,168 C92,168 80,152 80,152 Z" />
+        <path d="M148,102 C170,100 174,132 152,136" />
+        <ellipse cx="110" cy="172" rx="48" ry="8" />
+      </g>
+
+      <!-- grano de café -->
+      <g transform="translate(38,66)">
+        <g class="preloader__ingredient preloader__ingredient--1" style="--base-rot:-18deg">
+          <ellipse cx="0" cy="0" rx="9" ry="13" fill="#c8912a" />
+          <path d="M0,-11 C4,-5 4,5 0,11" stroke="rgba(60,36,20,0.55)" stroke-width="2" stroke-linecap="round" />
+        </g>
+      </g>
+      <g transform="translate(178,142)">
+        <g class="preloader__ingredient preloader__ingredient--3" style="--base-rot:22deg">
+          <ellipse cx="0" cy="0" rx="8" ry="12" fill="#c8912a" />
+          <path d="M0,-10 C3.5,-4.5 3.5,4.5 0,10" stroke="rgba(60,36,20,0.55)" stroke-width="2" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- hoja de menta -->
+      <g transform="translate(168,58)">
+        <g class="preloader__ingredient preloader__ingredient--2" style="--base-rot:16deg">
+          <path d="M-14,0 C-8,-16 10,-16 16,0 C10,16 -8,16 -14,0 Z" fill="rgba(168,201,146,0.3)" stroke="#a8c992" stroke-width="2" />
+          <path d="M-12,0 L14,0" stroke="#a8c992" stroke-width="1.4" />
+        </g>
+      </g>
+
+      <!-- canela -->
+      <g transform="translate(50,150)">
+        <g class="preloader__ingredient preloader__ingredient--4" style="--base-rot:-32deg">
+          <rect x="-19" y="-5.5" width="38" height="11" rx="5.5" fill="none" stroke="#c99a5b" stroke-width="2.4" />
+          <path d="M-11,-5.5 L-11,5.5 M0,-5.5 L0,5.5 M11,-5.5 L11,5.5" stroke="#c99a5b" stroke-width="1.4" />
+        </g>
+      </g>
+    </svg>
     <p class="preloader__text">La casa del café</p>
     <div class="preloader__bar"><span></span></div>
   </div>
